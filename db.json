@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "email": "sirviravindra609@gmail.com",
+      "Name": "ravindra sirvi",
+      "Image": null,
+      "id": 17
+    },
+    {
+      "email": "sirviravindra609@gmail.com",
+      "Name": "ravindra choudhary",
+      "Image": null,
+      "id": 16
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

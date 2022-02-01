@@ -24,10 +24,10 @@
 
 
       <td>{{row.email}}</td>
-      <td>{{row.Name}}</td>
+      <td>{{row.firstName +"  "+ row.lastName}}</td>
       <td> {{row.image}}</td>
       <td>
-        <button  type="button" class="btn btn-primary">View</button>
+        <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
         <button (click)="onEdit(row)"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
           class="btn btn-info mx-2">edit</button>
         <button (click)="deleteEmployee(row)" type="button" class="btn btn-danger mx-2">delete</button>
@@ -53,12 +53,18 @@
               aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Name</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="Name">
+            <label for="exampleInputPassword1" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="firstName">
+          </div>
+           <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">last Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="lastName">
           </div>
           <div class="mb-3">
             <label for="img">Select image:</label>
-            <input type="file" id="img" name="img" accept="image/*" formControlName="Image">
+            <input type="file" id="img" name="img" accept="image/*"  formControlName="Image">
+            
+
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

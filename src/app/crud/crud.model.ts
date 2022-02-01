@@ -1,6 +1,7 @@
 export class EmployeesModel{
     id!: number;
     email: string ='';
-    Name: string ='';
+    firstName: string ='';
+    lastName: string ='';
     Image: string ='';
 }

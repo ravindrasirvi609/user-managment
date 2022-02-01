@@ -25,10 +25,12 @@ export class CrudComponent implements OnInit {
   this.formValue = this.formbuilber.group({
      
       email:[' '],
-      Name:[' '],
+      firstName:[' '],
+      lastName:[' '],
       Image:[' ']
   
 })
+
 this.getAllEmployee();
   }
 
@@ -40,7 +42,8 @@ clickAddEmployee(){
 }
 postEmployeeDetails(){
     this.EmployeesModelObj.email = this.formValue.value.email;
-    this.EmployeesModelObj.Name = this.formValue.value.Name;
+    this.EmployeesModelObj.firstName = this.formValue.value.firstName;
+    this.EmployeesModelObj.lastName = this.formValue.value.lastName;
     this.EmployeesModelObj.Image = this.formValue.value.Image;
 
     this.api.postEmployee(this.EmployeesModelObj)
@@ -57,6 +60,7 @@ postEmployeeDetails(){
     }
 
     )}
+    
     getAllEmployee(){
         this.api.getEmployee()
         .subscribe(res=>{
@@ -78,12 +82,14 @@ postEmployeeDetails(){
         this.showUpdate= true;
         this.EmployeesModelObj.id = row.id;
         this.formValue.controls['email'].setValue(row.email)
-        this.formValue.controls['Name'].setValue(row.Name)
+        this.formValue.controls['firstName'].setValue(row.firstName)
+        this.formValue.controls['lastName'].setValue(row.lastName)
         this.formValue.controls['Image'].setValue(row.Image)
     }
     updateEmployeeDetails(){
         this.EmployeesModelObj.email = this.formValue.value.email;
-        this.EmployeesModelObj.Name = this.formValue.value.Name;
+        this.EmployeesModelObj.firstName = this.formValue.value.firstName;
+        this.EmployeesModelObj.lastName = this.formValue.value.lastName;
         this.EmployeesModelObj.Image = this.formValue.value.Image;
       
         this.api.updateEmployee(this.EmployeesModelObj,this.EmployeesModelObj.id)
